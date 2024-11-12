@@ -1,86 +1,106 @@
-# Python-list-functions
 
-# Initial list of cars
-cars = ["bmw", "mahindra", "suzuki", "rolls royce", "bentley", "aston martin", "tata", "audi", "mustang"]
+1. append()
+- Description: Adds an item to the end of the list.
 
-# 1. Append "ferrari" to the list
-cars.append("ferrari")
-print("After append:", cars)
+Example:
+fruits = ["apple", "banana"]
+fruits.append("cherry")
+print(fruits)  # Output: ["apple", "banana", "cherry"]
 
-# 2. Insert "porsche" at index 3
-cars.insert(3, "porsche")
-print("After insert at index 3:", cars)
 
-# 3. Clear all elements from the list
-cars.clear()
-print("After clear:", cars)
+2. extend()
+-Description: Adds multiple items from another list or iterable to the end of the list.
 
-# Re-initialize list after clear for remaining operations
-cars = ["bmw", "mahindra", "suzuki", "rolls royce", "bentley", "aston martin", "tata", "audi", "mustang"]
+Example:
+fruits = ["apple", "banana"]
+fruits.extend(["cherry", "date"])
+print(fruits)  # Output: ["apple", "banana", "cherry", "date"]
 
-# 4. Sort the original list of cars in alphabetical order and store in sorted_cars
-sorted_cars = sorted(cars)  # Doesn't change the original list
-print("Sorted list:", sorted_cars)
 
-# 5. Remove "audi" from the list
-cars.remove("audi")
-print("After removing 'audi':", cars)
+3. insert()
+- Description: Inserts an item at a specified position.
 
-# 6. Find the index of "mustang"
-index_mustang = cars.index("mustang")
-print("Index of 'mustang':", index_mustang)
+Example:
+fruits = ["apple", "cherry"]
+fruits.insert(1, "banana")
+print(fruits)  # Output: ["apple", "banana", "cherry"]
 
-# 7. Extend the list with another list of cars: ["tesla", "nissan"]
-cars.extend(["tesla", "nissan"])
-print("After extend with ['tesla', 'nissan']:", cars)
 
-# 8. Pop the last element from the list and print it
-last_car = cars.pop()
-print("Popped element:", last_car)
-print("List after pop:", cars)
+4. remove()
+-Description: Removes the first occurrence of a specified item.
 
-# 9. Count how many times "bmw" appears in the list
-bmw_count = cars.count("bmw")
-print("Count of 'bmw':", bmw_count)
+Example:
+fruits = ["apple", "banana", "cherry"]
+fruits.remove("banana")
+print(fruits)  # Output: ["apple", "cherry"]
 
-# 10. Append multiple cars: ["jaguar", "fiat"] to the list
-cars.extend(["jaguar", "fiat"])
-print("After appending multiple cars ['jaguar', 'fiat']:", cars)
+5. pop()
+- Description: Removes and returns the item at the specified position. If no index is specified, it removes the last item.
 
-# 11. Insert multiple cars ["volvo", "honda"] at index 2
-cars[2:2] = ["volvo", "honda"]
-print("After inserting multiple cars ['volvo', 'honda'] at index 2:", cars)
+Example:
+fruits = ["apple", "banana", "cherry"]
+item = fruits.pop(1)
+print(item)  # Output: "banana"
+print(fruits)  # Output: ["apple", "cherry"]
 
-# Initial list of cars for testing each task
-cars = ["bmw", "mahindra", "suzuki", "rolls royce", "bentley", "aston martin", "tata", "audi", "mustang"]
 
-# 12. Clear If Empty
-# Check if the list is empty and clear it if it is
-if not cars:  # Checks if the list is empty
-    cars.clear()
-print("After checking and clearing if empty:", cars)
+6. clear()
+- Description: Removes all items from the list, making it empty.
 
-# 13. Sort Descending
-# Sort the original list of cars in descending order
-cars.sort(reverse=True)
-print("Sorted list in descending order:", cars)
+Example:
+fruits = ["apple", "banana", "cherry"]
+fruits.clear()
+print(fruits)  # Output: []
 
-# 14. Remove All Occurrences
-# Remove all occurrences of "bmw" from the list
-cars = [car for car in cars if car != "bmw"]
-print("After removing all occurrences of 'bmw':", cars)
 
-# 15. Find Last Index
-# Find the last index of "tata"
-if "tata" in cars:
-    last_index_tata = len(cars) - 1 - cars[::-1].index("tata")
-else:
-    last_index_tata = -1  # Returns -1 if "tata" is not found
-print("Last index of 'tata':", last_index_tata)
+7. index()
+- Description: Returns the index of the first occurrence of a specified item.
 
-# 16. Extend with Condition
-# Extend the list with ["ferrari", "lambo"] only if "bmw" is in the list
-if "bmw" in cars:
-    cars.extend(["ferrari", "lambo"])
-print("After conditional extend:", cars)
+Example:
+fruits = ["apple", "banana", "cherry"]
+index = fruits.index("banana")
+print(index)  # Output: 1
 
+
+8. count()
+- Description: Returns the number of occurrences of a specified item in the list.
+
+Example:
+fruits = ["apple", "banana", "cherry", "banana"]
+count = fruits.count("banana")
+print(count)  # Output: 2
+
+
+9. sort()
+- Description: Sorts the items of the list in ascending or descending order.
+
+Example:
+numbers = [3, 1, 4, 1, 5]
+numbers.sort()
+print(numbers)  # Output: [1, 1, 3, 4, 5]
+
+
+10. reverse()
+- Description: Reverses the order of the items in the list.
+
+Example:
+fruits = ["apple", "banana", "cherry"]
+fruits.reverse()
+print(fruits)  # Output: ["cherry", "banana", "apple"]
+
+
+11. copy()
+- Description: Returns a shallow copy of the list.
+
+Example:
+fruits = ["apple", "banana", "cherry"]
+fruits_copy = fruits.copy()
+print(fruits_copy)  # Output: ["apple", "banana", "cherry"]
+
+
+12. len()
+- Description: Although not a method, len() is a built-in function that returns the number of items in the list.
+
+Example:
+fruits = ["apple", "banana", "cherry"]
+print(len(fruits))  # Output: 3
